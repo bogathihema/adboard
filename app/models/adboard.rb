@@ -1,0 +1,3 @@
+class Adboard < ApplicationRecord
+  
+end

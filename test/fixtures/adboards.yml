@@ -1,0 +1,13 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  size_n: 1
+  size_m: 1
+  color: MyString
+  time_in_hours: 1
+
+two:
+  size_n: 1
+  size_m: 1
+  color: MyString
+  time_in_hours: 1

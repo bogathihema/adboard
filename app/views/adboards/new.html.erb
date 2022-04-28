@@ -1,0 +1,52 @@
+<div class = "container">
+  <div class = "row form-group">
+  <div class = "col-2">
+    <div class = "col-8">
+    <h1 class = "text-center">Create AD Board</h1>
+    <%= form_for @adboard do |f|%>
+
+      <div class = "row form-group">
+        <div class = "col">
+        <%= f.text_field :title, :required => true, placeholder: "Enter Title", class: "form-control"%><br>
+        </div>
+      </div>
+
+      <div class = "row form-group">
+        <div class = "col">
+          <%= f.text_field :size_n, :required => true, placeholder: "Enter Height", class: "form-control"%><br>
+        </div>
+      </div>
+
+      <div class = "row form-group">
+        <div class = "col">
+          <%= f.text_field :size_m, :required => true, placeholder: "Enter Width", class: "form-control"%><br>
+        </div>
+      </div>
+
+      <div class = "row form-group">
+        <div class = "col from-control">
+          <%= f.select :color, ['Black', 'White', 'Color', 'Flashy'], {:include_blank => false}, placeholder: "Select Color", class: "form-control"%><br>
+        </div>
+      </div>
+
+      <div class = "row form-group">
+        <div class = "col">
+          <%= f.number_field :time_in_hours, :required => true, class: "form-control"%><br>
+        </div>
+      </div>
+
+
+      <div class = "row form-group">
+        <div class = "col text-center">
+          <%= f.submit class: "form-control btn btn-primary"%>
+        </div>
+      </div>
+
+    <%end%>
+
+
+    </div>
+    </div>
+    </div>
+
+   </div>

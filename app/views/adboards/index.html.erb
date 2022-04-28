@@ -1,0 +1,51 @@
+<div class = "container">
+  <div class = "row">
+    <% if params[:cost].present? %>
+      <h2>You are recently created ad cost should be
+      <%= "$ #{params[:cost].to_i}."+"#{(params[:cost].to_i % 1.0)}"[2..3]%>
+      </h2>
+      <% end %>
+  </div>
+
+<div class = "row">
+  <h2>AD Board History</h2>
+  <table class="table" id="adboard-table">
+    <thead>
+      <tr>
+        <th>Title</th>
+        <th>Size</th>
+        <th>Color</th>
+        <th> Total Hours</th>
+        <th> Price</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @adboards.each do |ad| %>
+        <tr>
+          <td><%=ad.title%></td>
+          <td><%=ad.size_m%> * <%=ad.size_n%></td>
+          <td><%=ad.color%></td>
+          <td><%=ad.time_in_hours%></td>
+          <td><%="$ #{ad.price.to_i}."+"#{(ad.price.to_i % 1.0)}"[2..3]%></td>
+        </tr>
+      <% end %>
+
+    </tbody>
+  </table>
+  </div>
+
+
+  <div class = "row">
+    <div class = "col-sm-6">
+      <a href= "<%= new_adboard_path %>", class = "btn btn-danger btn-block rounded-0">Create AD</a>
+    </div>
+    <div class ="col-sm-6">
+      <a href="<%=ad_view_index_path%>", class= "btn btn-success btn-block rounded-0">Home Page to view Ad's</a>
+      </div>
+  </div>
+
+  <script>
+    $('#adboard-table').DataTable({
+
+    });
+    </script>
